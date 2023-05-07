@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #screen{
+            width:100%;
+            /* height:1000px; */
+            border:1px solid red;
+            background-color: #e3e6e9;
+            }
+            #navbar{
+                display: flex;
+                justify-content: center;
+            }
+            #navbar>div:nth-child(1){
+                width:80%;
+            }
+        
+        #navbar{
+            height:100px;
+            width:100%;
+            /* border:1px solid green; */
+            display: flex;
+            position: fixed;
+            top:0;
+            margin-bottom: 10%;
+            background-color: white;
+        }
+        #navbar>div{
+            width:50%;
+            border-bottom:1px solid black;
+            display: flex;
+            justify-content: center;
+        }
+        #navbar>div:nth-child(1)>div{
+            width:60%;
+            /* border:1px solid red; */
+            display: flex;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(1){
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(1)>img{
+            height:100%;
+            width:90%;
+        }
+        #navbar>div:nth-child(1)>div{
+            display: flex;
+            align-items: center;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2){
+            height:30px;
+            /* border-bottom:1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p{
+            font-size: 20px;
+            color:black;
+            font-weight: bold;
+            /* border:1px solid red; */
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span{
+            color:black;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span:hover{
+            cursor: pointer;
+            color:#fc8625;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>i{
+            color:#fc8625;
+            margin-left: 5px;
+        }
+        #navbar>div:nth-child(2){
+            display: flex;
+            justify-content: left;
+            /* border: 1px solid red; */
+            align-items: center;
+            margin-right: 80px;
+            padding-right: 80px;
+        }
+        #navbar>div:nth-child(2)>div{
+            width:90%;
+            height:35%;
+            display: flex;
+            justify-content: left;
+            /* border: 1px solid gold; */
+        }
+        #navbar>div:nth-child(2)>div>div{
+            width:20%;
+            flex-wrap: wrap;
+        }
+        #navbar>div:nth-child(2)>div>div>p{
+            font-size: 20px;
+            color:rgb(73, 72, 72);
+            /* border:1px solid pink; */
+        }
+        #navbar>div:nth-child(2)>div>div>p:hover{
+            color:#fc8625;
+        }
+        #navbar>div:nth-child(2)>div>div>p>span>i{
+            margin-right: 8px;
+        }
+        #navbar>div:nth-child(2)>div>div:nth-child(1)>p{
+            display: none;
+        }
+        #navbar>div:nth-child(2)>div>div:nth-child(2)>p{
+            display: none;
+        }
+        #navbar>div:nth-child(2)>div>div:nth-child(3)>p{
+            display: none;
+        }
+        #body{
+            width:75%;
+            /* height:1500px; */
+            /* border:1px solid red; */
+            margin: auto;
+            margin-top: 140px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #left{
+            width:67%;
+            height:100%;
+            /* overflow-y: scroll; */
+            /* border:1px solid blue; */
+        }
+        #left>div:nth-child(1){
+            /* height:280px; */
+            width:100%;
+            /* border:1px solid green; */
+            background-color: white;
+            padding:20px;
+        }
+        #left>div:nth-child(1)>div:nth-child(1){
+            height:50px;
+            width:100%;
+            /* border:1px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #left>div:nth-child(1)>div:nth-child(1)>p:nth-child(1){
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #left>div:nth-child(1)>div:nth-child(1)>p:nth-child(1)>span{
+            margin-left: 20px;
+            color:green;
+        }
+        #left>div:nth-child(1)>div:nth-child(1)>p:nth-child(2){
+            color:rgb(253, 166, 6);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #left>div:nth-child(1)>div:nth-child(2){
+            height:140px;
+            width:65%;
+            /* border:1px solid red; */
+            padding-top: 10px;
+        }
+        #left>div:nth-child(1)>div:nth-child(2)>p:nth-child(1){
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(1)>div:nth-child(2)>p:nth-child(2){
+            font-size: 20px;
+            color:grey;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(1)>div:nth-child(2)>p:nth-child(3){
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2){
+            height:1200px;
+            width:100%;
+            /* border:1px solid green; */
+            margin-top: 30px;
+            background-color: white;
+            padding:20px;
+        }
+        #left>div:nth-child(2)>div:nth-child(1){
+            height:70px;
+            width:100%;
+            /* border:1px solid red; */
+            padding-top: 15px;
+        }
+        #left>div:nth-child(2)>div:nth-child(1)>p{
+            font-size: 20px;
+            font-weight: 550;
+        }
+        #left>div:nth-child(2)>div:nth-child(2){
+            height:1000px;
+            width:100%;
+            /* border:1px solid blue; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+            width:32%;
+            height:100%;
+            /* border:1px solid black; */
+            background-color: #edf1f7;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div{
+            height:80px;
+            width:100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            color:grey;
+    
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:nth-child(1){
+            background-color: white;
+            color:black;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:hover{
+            /* background-color: white; */
+            color:black;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>p{
+            font-size: 19px;
+           
+            font-weight: bold;
+        }
+         #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div>p>span{
+            margin-right: 15px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div:nth-child(2)>p>span:nth-child(2)>img{
+            height:18px;
+            width:30px;
+            margin-left: 20px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+            width:65%;
+            height:100%;
+            /* border:1px solid black; */
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div{
+            height:215px;
+            width:100%;
+            border:1px solid rgb(190, 190, 190);
+            margin-bottom: 20px;
+            padding:30px;
+
+
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>img{
+            height:40px;
+            width:50px;
+            margin-bottom: 20px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>p{
+            font-size: 20px;
+            font-weight:550;
+            margin-bottom: 15px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>button{
+            height:45px;
+            width:150px;
+            font-size: 16px;
+            background-color: #60b246;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>img{
+            height:70px;
+            width:70px;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>p:nth-child(2){
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>p:nth-child(3){
+            font-size: 18px;
+            color:#fc8019;
+            font-weight: bold;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>img{
+            height:50px;
+            width:50px;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>p:nth-child(2){
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(3)>p:nth-child(3){
+            font-size: 18px;
+            color:#fc8019;
+            font-weight: bold;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(4)>img{
+            height:50px;
+            width:50px;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(4)>p:nth-child(2){
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2)>div:nth-child(4)>p:nth-child(3){
+            font-size: 18px;
+            color:#fc8019;
+            font-weight: bold;
+        }
+        #right{
+            width:30%;
+            height:100%;
+            /* border:1px solid blue; */
+            /* background-color: white; */
+        }
+        #right>div:nth-child(1){
+            /* height:750px; */
+            width:100%;
+            margin-bottom: 20px;
+            /* border:1px solid red; */
+            background-color: white;
+            padding:20px;
+        }
+        #right1{
+            height:60px;
+            width:100%;
+            /* border:1px solid red; */
+            display:flex;
+            justify-content: space-between;
+        }
+        #right1>div:nth-child(1){
+            height:100%;
+            width:20%;
+            /* border:1px solid red; */
+        }
+        #right1>div:nth-child(1)>img{
+            height:100%;
+            width:100%;
+        }
+        #right1>div:nth-child(2){
+            width:75%;
+            height:100%;
+            /* border:1px solid blue; */
+        }
+        #right1>div:nth-child(2)>p:nth-child(1){
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #right1>div:nth-child(2)>p:nth-child(2){
+            color:grey;
+            margin-top: 5px;
+        }
+        #right1>div:nth-child(2)>div{
+            height:2px;
+            width:50px;
+            background-color: black;
+            margin-top: 10px;
+        }
+        #right2{
+            height:95px;
+            width:100%;
+            /* border:1px solid green; */
+            padding-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #right2>i{
+            width:5%;
+            color:green;
+            /* border:1px solid red; */
+        }
+        #right2>p:nth-child(2){
+            width:40%;
+            font-size: 16px;
+            /* border:1px solid red; */
+        }
+        #right2>div{
+            width:25%;
+            height:35px;
+            border:1px solid rgb(193, 190, 190);
+            display: flex;
+            /* border:1px solid red; */
+        }
+        #right2>div>p{
+            width:33%;
+            height:100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color:green;
+            font-weight: bold;
+        }
+        #right2>div>p:nth-child(1){
+            color:grey;
+        }
+        #right2>p:nth-child(4){
+            width:15%;
+            /* border:1px solid red; */
+            margin-top: 10px;
+
+        }
+        #right3{
+            height:60px;
+            width:100%;
+            /* border:1px solid red; */
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            background-color: #f9f9f9;
+
+        }
+        #right3>p>span{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #right3>p{
+            color:grey;
+            font-size: 16px;
+        }
+        #right4{
+            height:100px;
+            width:100%;
+            border:1px solid gray;
+            margin-top: 20px;
+            display:flex;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+        #right4>div:nth-child(1){
+            width:15%;
+            height:100%;
+            /* border:1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+        #right4>div:nth-child(1)>i{
+           font-size: 25px;
+        }
+        #right4>div:nth-child(2){
+            width:90%;
+            height:100%;
+            /* border:1px solid black; */
+        }
+        #right4>div:nth-child(2)>p:nth-child(1){
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        #right4>div:nth-child(2)>p:nth-child(2){
+            color:grey;
+        }
+        #right5{
+            height:60px;
+            width:100%;
+            border:1px dashed grey;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #right5>div:nth-child(1){
+            width:15%;
+            height:100%;
+            /* border:1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #right5>div:nth-child(1)>i{
+           font-size: 20px;
+           color:grey;
+        }
+        #right5>div:nth-child(2){
+            width:90%;
+            height:100%;
+            /* border:1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+        #right5>div:nth-child(2)>p{
+            cursor:pointer;
+            color:grey;
+            font-size: 18px;
+        }
+        #right6{
+            /* height:300px; */
+            width:100%;
+            /* border:1px solid red; */
+            margin-top: 20px;
+        }
+        #right6>div>p{
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #right6>div>div:nth-child(2){
+            margin-top: 5px;
+            height:75px;
+            width:100%;
+            /* border:1px solid grey; */
+            border-bottom: 1px solid grey;
+            display: flex;
+            line-height: 25px;
+            color:grey;
+        }
+        #right6>div>div:nth-child(2)>div:nth-child(1){
+            width:50%;
+            height:100%;
+        }
+        #right6>div>div:nth-child(2)>div:nth-child(2){
+            width:50%;
+            height:100%;
+            
+        }
+        #right6>div>div:nth-child(2)>div:nth-child(2)>p{
+            text-align: right;
+        }
+        #right6>div>div:nth-child(3){
+            height:60px;
+            width:100%;
+            /* border:1px solid grey; */
+            border-bottom: 2px solid black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: grey;
+        }
+        #right6>div>div:nth-child(4){
+            height:50px;
+            width:100%;
+            /* border:1px solid grey; */
+            /* border-bottom: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+        }
+        #right>div:nth-child(2){
+            height:300px;
+            width:100%;
+            /* border:1px solid red; */
+            background-color: white;
+            padding:20px 30px;
+        }
+        #right>div:nth-child(2)>div{
+            width:100%;
+            height:100%;
+            border:1px solid grey;
+            padding: 15px 20px;
+            border-radius: 5px;
+        }
+        #right>div:nth-child(2)>div>p:nth-child(1){
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #right>div:nth-child(2)>div>p:nth-child(2)>span{
+            color:red;
+        }
+        #right>div:nth-child(2)>div>p:nth-child(2){
+            color:rgb(70, 67, 67);
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        #right>div:nth-child(2)>div>p:nth-child(3){
+            color:rgb(158, 156, 156);
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        #right>div:nth-child(2)>div>p:nth-child(4){
+            color:brown;
+            font-weight: bold;
+            border-bottom: 1px dashed brown;
+            width:63%;
+            line-height: 20px;
+        }
+        #footer{
+            height:750px;
+            width:100%;
+            background-color: black;
+            display: flex;
+            align-items:end;
+            justify-content:center;
+        }
+        #footer>div{
+            width:80%;
+            height:90%;
+            /* border:1px solid gold; */
+        }
+        #footer>div>div:nth-child(1){
+            height:60%;
+            width:100%;
+            /* border-bottom:1px solid grey; */
+            display: flex;
+        }
+        #footer>div>div:nth-child(1)>div{
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+            color:white;
+        }
+        #footer>div>div:nth-child(1)>div>h4{
+            color:rgb(175, 171, 171);
+            font-size: 20px;
+            margin-bottom: 10%;
+        }
+        #footer>div>div:nth-child(1)>div>p{
+            font-size: 20px;
+            margin-top: 6%;
+
+        }
+        #footer>div>div:nth-child(1)>div:nth-child(4)>img{
+            border:2px solid grey;
+            width:70%;
+            height:18%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        #footer>div>div:nth-child(2){
+            margin-top: 1%;
+            height:230px;
+            width:100%;
+            border-top:1px solid grey;
+        }
+        #footer>div>div:nth-child(2)>h3{
+            color:rgb(175, 171, 171);
+            margin-top: 3%;
+        }
+        #footer>div>div:nth-child(2)>div{
+            width:100%;
+            height:80%;
+            /* border:1px solid red; */
+            color:white;
+            display: flex;
+        }
+        #footer>div>div:nth-child(2)>div>div{
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+            color:white;
+        }
+        #footer>div>div:nth-child(2)>div>div>p{
+            font-size: 20px;
+            margin-top: 6%;
+
+        }
+        @media screen and (max-width:1000px){
+            #navbar>div:nth-child(1)>div{
+                width:100%;
+            }
+            #navbar>div:nth-child(2)>div{
+                width:100%;
+            }
+            #navbar>div:nth-child(2)>div>div>p{
+                font-size: 16px;
+            }
+            #body{
+                width:90%;
+            }
+            #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(1){
+                width:48%;
+            }
+            #left>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){
+                width:48%;
+            }
+           
+        }
+        @media screen and (max-width:700px){
+            #navbar>div:nth-child(2){
+                display: none;
+            }
+            #navbar{
+                display: flex;
+                justify-content: center;
+            }
+            #navbar>div:nth-child(1){
+                width:80%;
+            }
+            #left>div:nth-child(1)>div:nth-child(2){
+                width:80%;
+            }
+            #left>div:nth-child(2){
+                padding:2px
+            }
+            #footer{
+                height:800px;
+            }
+            #footer>div{
+                width:100%;
+                margin-top: 30px;
+                /* border:3px solid gold; */
+            }
+            #footer>div>div:nth-child(1){
+                height:250px;
+            }
+            #footer>div>div:nth-child(1)>div:nth-child(4)>img{
+                width:100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div>
+                <div>
+                    <div>
+                        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png"/>
+                    </div>
+                    <div><p>SECURE CHECKOUT</p></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div><p><span><i class="fa-solid fa-cart-shopping"></i></span>Cart</p></div>
+                  
+                    <div><p><span><i class="fa-solid fa-magnifying-glass"></i></span> Search</p></div>
+                    <div><p><span><i class="fa-solid fa-certificate"></i></span>Offers<sup style="color:#fc8625">New</sup></p></div>
+                    <div><p><span><i class="fa-solid fa-hand-holding-hand"></i></i></span>Help</p></div>
+                    <div><p><span><i class="fa-solid fa-user-plus"></i></span>Snehal</p></div>
+                   
+                   
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="left">
+                <div>
+                    <div>
+                        <p>Delivery address<span><i class="fa-solid fa-circle-check"></i></span></p>
+                        <p>CHANGE</p>
+                    </div>
+                    <div>
+                        <p>Home</p>
+                        <p>202,Juhu Nagar, Sector 2,Vashi, Navi Mumbai, Maharashtra 400703, India</p>
+                        <p>23 MINS</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Choose payment method</p>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <p><span><i class="fa-solid fa-wallet"></i></span>Wallets</p>
+                            </div>
+                            <div>
+                                <p><span><i class="fa-solid fa-square-minus"></i></span>UPI<span><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NewTag_ju0z2e"/></span></p>
+                            </div>
+                            <div>
+                                <p><span><i class="fa-regular fa-credit-card"></i></span>Sodexo</p>
+                            </div>
+                            <div>
+                                <p><span><i class="fa-solid fa-id-card-clip"></i></span>Netbanking</p>
+                            </div>
+                            <div>
+                                <p><span><i class="fa-solid fa-id-card"></i></span>Credit & Debit cards</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/Amazon_Pay_Logos/Pay/logo_pay-primary-fullcolor-positive"/>
+                                <p>Amazon Pay</p>
+                                <button>PAY Rs.664</button>
+                            </div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/PaymentLogos/paymentIcons/wallets/paytm"/>
+                                <p>Paytm</p>
+                                <p>LINK ACCOUNT</p>
+                            </div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/v1612413183/PaymentLogos/Mobikwik"/>
+                                <p>Mobikwik</p>
+                                <p>LINK ACCOUNT</p>
+                            </div>
+                            <div>
+                                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_80/phonepe_icon_aca9jf"/>
+                                <p>PhonePe (Wallet/UPI/Cards)</p>
+                                <p>LINK ACCOUNT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="right">
+                <div>
+                    <div id="right1">
+                        <div><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/f0wfkena04aww96bpjde" alt="image"/></div>
+                        <div>
+                            <p>Little Dessert Hut</p>
+                            <p>Vashi</p>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div id="right2">
+                        <i class="fa-solid fa-square-minus"></i>
+                        <p>Strawberry Choco Milkshake</p>
+                        <div>
+                            <p>-</p>
+                            <p>1</p>
+                            <p>+</p>
+                        </div>
+                        <p>Rs.199</p>
+                    </div>
+                    <div id="right3">
+                        <p><span>"</span> Any Suggestions? We will pass it on...</p>
+                    </div>
+                    <div id="right4">
+                        <div><i class="fa-thin fa-square"></i></div>
+                        <div>
+                            <p>Opt in for No-contact Delivery</p>
+                            <p>Unwell, or avoiding contact? Please select no-contact delivery.Partner will safely place the order outside your door (not for COD)</p>
+                        </div>
+                    </div>
+                    <div id="right5">
+                        <div><i class="fa-solid fa-certificate"></i></div>
+                        <div><p>Apply Coupon</p></div>
+                    </div>
+                    <div id="right6">
+                        <div>
+                            <p>Bill Details</p>
+                            <div>
+                                <div>
+                                    <p>Item Total</p>
+                                    <p>Delivery Fee | 1.5 Kms</p>
+                                </div>
+                                <div>
+                                    <p>Rs.199</p>
+                                    <p>Rs.34</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Govt Taxes & Other Charges</p>
+                                <p>Rs.9.95</p>
+                            </div>
+                            <div>
+                                <p>TO PAY</p>
+                                <p>Rs.243</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Review your order and address details to avoid cancellations</p>
+                        <p><span>Note:</span> If you cancel within 60 seconds of placing your order, a 100% refund will be issued. No refund for cancellations made after 60 seconds.</p>
+                        <p>Avooid cancellations as it leads to food wastage.</p>
+                        <p>Read cancellation policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div>
+             <div>
+                 <div>
+                     <h4>CAMPANY</h4>
+                     <p>About us</p>
+                     <p>Team</p>
+                     <p>Careers</p>
+                     <p>Swiggy Blog</p>
+                     <p>Bug Bounty</p>
+                     <p>Swiggy One</p>
+                 </div>
+                 <div>
+                     <h4>CONTACT</h4>
+                     <p>Help & Support</p>
+                     <p>Partner with us</p>
+                     <p>Ride with us</p>
+                 </div>
+                 <div>
+                     <h4>LEGAL</h4>
+                     <p>Terms & Conditions</p>
+                     <p>Refund & Cancellation</p>
+                     <p>Privacy Policy</p>
+                     <p>Cookie Policy</p>
+                     <p>Offer Terms</p>
+                 </div>
+                 <div>
+                     <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"/>
+                     <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"/>
+                 </div>
+             </div>
+             <div>
+                 <h3>WE DELIVER TO</h3>
+                 <div>
+                     <div>
+                         <p>Abohar</p>
+                         <p>Adilabad</p>
+                         <p>Adityapur</p>
+                         <p>Adoni</p>
+                     </div>
+                     <div>
+                         <p>Dehradun</p>
+                         <p>Dehri</p>
+                         <p>Delhi</p>
+                         <p>Deoghar</p>
+                         <p>Deoria-City</p>
+                     </div>
+                     <div>
+                         <p>Khanna</p>
+                         <p>Kharagpur</p>
+                         <p>Kishanganj</p>
+                         <p>KIshangarh</p>
+                         <p>Kochi</p>
+                     </div>
+                     <div>
+                         <p>Purulia</p>
+                         <p>Pusad</p>
+                         <p>Puttur</p>
+                         <p>Rae-Bareli</p>
+                         <p>Paichur</p>
+                     </div>
+                 </div>
+             </div>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
