@@ -1,108 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myntra-restaurants</title>
+    <title>Restaurants</title>
     <style>
-        *{
-            margin:0;
+        * {
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        #screen{
-            height:1200px;
-            width:100%;
+
+        #screen {
+            height: 1200px;
+            width: 100%;
             /* border:1px solid red; */
         }
-        #navbar{
-            height:100px;
-            width:100%;
+
+        #navbar {
+            height: 100px;
+            width: 100%;
             /* border:1px solid green; */
             display: flex;
             position: fixed;
-            top:0;
+            top: 0;
             margin-bottom: 10%;
             background-color: white;
         }
-        #navbar>div{
-            width:50%;
-            border-bottom:1px solid black;
+
+        #navbar>div {
+            width: 70%;
+            border-bottom: 1px solid black;
             display: flex;
             justify-content: center;
         }
-        #navbar>div:nth-child(1)>div{
-            width:60%;
+
+        #navbar>div:nth-child(1)>div {
+            width: 80%;
             /* border:1px solid red; */
             display: flex;
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(1){
-            width:25%;
-            height:100%;
+
+        #navbar>div:nth-child(1)>div>div:nth-child(1) {
+            width: 25%;
+            height: 100%;
             /* border:1px solid red; */
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(1)>img{
-            height:100%;
-            width:90%;
+
+        #navbar>div:nth-child(1)>div>div:nth-child(1)>img {
+            height: 100%;
+            width: 90%;
         }
-        #navbar>div:nth-child(1)>div{
+
+        #navbar>div:nth-child(1)>div {
             display: flex;
             align-items: center;
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(2){
-            height:30px;
+
+        #navbar>div:nth-child(1)>div>div:nth-child(2) {
+            height: 30px;
             /* border-bottom:1px solid black; */
             display: flex;
             align-items: center;
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(2)>p{
+
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p {
             font-size: 17px;
-            color:rgb(138, 136, 136);
+            color: rgb(138, 136, 136);
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span{
-            color:black;
+
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span {
+            color: black;
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span:hover{
+
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span:hover {
             cursor: pointer;
-            color:#fc8625;
+            color: #fc8625;
         }
-        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>i{
-            color:#fc8625;
+
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>i {
+            color: #fc8625;
             margin-left: 5px;
         }
-        #navbar>div:nth-child(2){
+
+        #navbar>div:nth-child(2) {
             display: flex;
-            justify-content: left;
+            /* justify-content: left; */
             /* border: 1px solid red; */
             align-items: center;
         }
-        #navbar>div:nth-child(2)>div{
-            width:90%;
-            height:35%;
+
+        #navbar>div:nth-child(2)>div {
+            width: 90%;
+            height: 35%;
             display: flex;
             justify-content: space-around;
             /* border: 1px solid gold; */
         }
-        #navbar>div:nth-child(2)>div>div{
+
+        #navbar>div:nth-child(2)>div>div {
             /* width:20%; */
             flex-wrap: wrap;
         }
-        #navbar>div:nth-child(2)>div>div>p{
+
+        #navbar>div:nth-child(2)>div>div>p {
             font-size: 20px;
-            color:rgb(73, 72, 72);
+            color: rgb(73, 72, 72);
             /* border:1px solid pink; */
         }
-        #navbar>div:nth-child(2)>div>div>p:hover{
-            color:#fc8625;
+
+        #navbar>div:nth-child(2)>div>div>p:hover {
+            color: #fc8625;
         }
-        #navbar>div:nth-child(2)>div>div>p>span>i{
+
+        #navbar>div:nth-child(2)>div>div>p>span>i {
             margin-right: 8px;
         }
-        #body1{
-            height:400px;
-            width:100%;
+
+        #body1 {
+            height: 400px;
+            width: 100%;
             /* border:1px solid green; */
             background-color: #171a29;
             display: flex;
@@ -110,70 +132,81 @@
             justify-content: center;
             margin-top: 100px;
         }
-        #body1>div{
-            width:80%;
-            height:80%;
+
+        #body1>div {
+            width: 80%;
+            height: 80%;
             /* border:1px solid white; */
             display: flex;
             justify-content: space-between;
         }
-        #body1>div>div{
-            width:22%;
-            height:100%;
+
+        #body1>div>div {
+            width: 22%;
+            height: 100%;
         }
-        #body1>div>div>img{
-            width:100%;
-            height:100%;
+
+        #body1>div>div>img {
+            width: 100%;
+            height: 100%;
         }
-        #body1>div>div>img:hover{
+
+        #body1>div>div>img:hover {
             cursor: pointer;
             scale: 1.05;
         }
-        #navbar2{
-            width:100%;
-            height:100px;
+
+        #navbar2 {
+            width: 100%;
+            height: 100px;
             background-color: white;
             /* border:1px solid red; */
             display: flex;
             justify-content: center;
             position: -webkit-sticky;
             position: sticky;
-             top: 0;
-             box-shadow: 10px 2px 2px rgb(235, 234, 234);
+            top: 0;
+            box-shadow: 10px 2px 2px rgb(235, 234, 234);
             z-index: 2;
         }
-        #navbar2>div{
-            width:80%;
-            border-bottom:1px solid grey;
+
+        #navbar2>div {
+            width: 90%;
+            border-bottom: 1px solid grey;
             display: flex;
             align-items: end;
-        
+
         }
-        #navbar2>div>div:nth-child(1){
-            width:35%;
-            height:70%;
+
+        #navbar2>div>div:nth-child(1) {
+            width: 35%;
+            height: 70%;
             /* border:1px solid blue; */
             display: flex;
             align-items: center;
         }
-        #navbar2>div>div:nth-child(2){
-            width:65%;
-            height:50%;
+
+        #navbar2>div>div:nth-child(2) {
+            width: 65%;
+            height: 50%;
             /* border:1px solid blue; */
             display: flex;
             justify-content: space-between;
             align-items: center;
             /* flex-wrap: wrap; */
         }
-        #navbar2>div>div:nth-child(2)>div>p{
+
+        #navbar2>div>div:nth-child(2)>div>p {
             font-size: 20px;
-            color:rgb(100, 99, 99);
+            color: rgb(100, 99, 99);
         }
-        #navbar2>div>div:nth-child(2)>div:nth-child(6)>p{
-            color:black;
+
+        #navbar2>div>div:nth-child(2)>div:nth-child(6)>p {
+            color: black;
         }
-        #body2{
-            width:80%;
+
+        #body2 {
+            width: 80%;
             /* height:1070px; */
             /* border:1px solid red; */
             margin: auto;
@@ -182,9 +215,10 @@
             flex-wrap: wrap;
             padding-top: 40px;
         }
-        #body2>div{
-            height:450px;
-            width:22%;
+
+        #body2>div {
+            height: 450px;
+            width: 22%;
             /* border:1px solid green; */
             display: flex;
             padding: 10px;
@@ -192,36 +226,31 @@
             /* justify-content: center; */
             margin-bottom: 2%;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(1){
-            width:100%;
-            height:200px;
+
+        #body2>div>div:nth-child(1)>div:nth-child(1) {
+            width: 100%;
+            height: 200px;
             /* border:1px solid red; */
         }
-        #body2>div>div:nth-child(1)>div:nth-child(1)>div{
+
+        #body2>div>div:nth-child(1)>div:nth-child(1)>div {
             background: rgb(58, 60, 65);
             color: rgb(255, 255, 255);
             /* border-color: #8a584b transparent ; */
             border-style: solid;
             z-index: 1;
-            /* border-left: 10px solid #8a584b; */
-           
 
-    /* position: absolute;
-    left:170px;
-    left: 50px;
-    top: 500; */
-    margin-bottom: -20px;
-    position: relative;
-    margin-left: -10px;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 5px 9px 4px;
-    width: 33%;
-    /* border-color: #8a584b; */
-    /* background-color: #8a584b; */
-      
-        
+            margin-bottom: -20px;
+            position: relative;
+            margin-left: -10px;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 5px 9px 4px;
+            width: 33%;
+
+
         }
+
         /* #body2>div>div:nth-child(1)>div:nth-child(1)>div>div{
 
             text-overflow: ellipsis;
@@ -230,146 +259,169 @@
        
 
         } */
-        #body2>div>div:nth-child(1)>div:nth-child(1)>img{
-          height:100%;
-          width:100%;
+        #body2>div>div:nth-child(1)>div:nth-child(1)>img {
+            height: 100%;
+            width: 100%;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(2){
-            width:100%;
-            height:80px;
+
+        #body2>div>div:nth-child(1)>div:nth-child(2) {
+            width: 100%;
+            height: 80px;
             /* border: 1px solid black; */
-            padding-top:15px;
+            padding-top: 15px;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(2)>p{
-            color:rgb(90, 89, 89);
+
+        #body2>div>div:nth-child(1)>div:nth-child(2)>p {
+            color: rgb(90, 89, 89);
         }
-        #body2>div>div:nth-child(1)>div:nth-child(3){
-            width:100%;
-            height:40px;
-            border-bottom:1px solid rgb(206, 204, 204);
+
+        #body2>div>div:nth-child(1)>div:nth-child(3) {
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid rgb(206, 204, 204);
             display: flex;
             align-items: center;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(3)>div{
-            height:50%;
-            width:100%;
+
+        #body2>div>div:nth-child(1)>div:nth-child(3)>div {
+            height: 50%;
+            width: 100%;
             /* border:1px solid purple; */
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(3)>div>button{
-            height:100%;
-            width:15%;
+
+        #body2>div>div:nth-child(1)>div:nth-child(3)>div>button {
+            height: 100%;
+            width: 15%;
             background-color: #48c479;
-            color:white;
-            border:none;
+            color: white;
+            border: none;
         }
-        #body2>div>div:nth-child(1)>div:nth-child(3)>div>p{
+
+        #body2>div>div:nth-child(1)>div:nth-child(3)>div>p {
             font-size: 12px;
-            color:rgb(90, 89, 89);
+            color: rgb(90, 89, 89);
         }
-        #body2>div>div:nth-child(1)>div:nth-child(4){
-            width:100%;
-            height:50px;
+
+        #body2>div>div:nth-child(1)>div:nth-child(4) {
+            width: 100%;
+            height: 50px;
             /* border:1px solid gold; */
             display: flex;
             align-items: center;
-            color:brown;
+            color: brown;
         }
-        .none{
-           height:50px;
-           /* border:1px solid red; */
-           display: none;
+
+        .none {
+            height: 50px;
+            /* border:1px solid red; */
+            display: none;
         }
+
         #body2>div:hover {
             box-shadow: 5px 2px 2px 2px rgb(248, 247, 247);
-            border:1px solid rgb(218, 215, 215);
+            border: 1px solid rgb(218, 215, 215);
         }
-        #body2>div:hover .none{
+
+        #body2>div:hover .none {
             display: block;
-            height:50px;
-            width:100%;
-            border-top:1px solid rgb(224, 222, 222);
+            height: 50px;
+            width: 100%;
+            border-top: 1px solid rgb(224, 222, 222);
             display: flex;
             align-items: center;
             justify-content: center;
-            color:rgb(115, 115, 249);
+            color: rgb(115, 115, 249);
             font-weight: bold;
             /* display: none; */
         }
-         #footer{
-            height:750px;
-            width:100%;
+
+        #footer {
+            height: 750px;
+            width: 100%;
             background-color: black;
             display: flex;
-            align-items:end;
-            justify-content:center;
+            align-items: end;
+            justify-content: center;
         }
-        #footer>div{
-            width:80%;
-            height:90%;
+
+        #footer>div {
+            width: 80%;
+            height: 90%;
             /* border:1px solid gold; */
         }
-        #footer>div>div:nth-child(1){
-            height:60%;
-            width:100%;
+
+        #footer>div>div:nth-child(1) {
+            height: 60%;
+            width: 100%;
             /* border-bottom:1px solid grey; */
             display: flex;
         }
-        #footer>div>div:nth-child(1)>div{
-            width:25%;
-            height:100%;
+
+        #footer>div>div:nth-child(1)>div {
+            width: 25%;
+            height: 100%;
             /* border:1px solid red; */
-            color:white;
+            color: white;
         }
-        #footer>div>div:nth-child(1)>div>h4{
-            color:rgb(175, 171, 171);
+
+        #footer>div>div:nth-child(1)>div>h4 {
+            color: rgb(175, 171, 171);
             font-size: 20px;
             margin-bottom: 10%;
         }
-        #footer>div>div:nth-child(1)>div>p{
+
+        #footer>div>div:nth-child(1)>div>p {
             font-size: 20px;
             margin-top: 6%;
 
         }
-        #footer>div>div:nth-child(1)>div:nth-child(4)>img{
-            border:2px solid grey;
-            width:70%;
-            height:18%;
+
+        #footer>div>div:nth-child(1)>div:nth-child(4)>img {
+            border: 2px solid grey;
+            width: 70%;
+            height: 18%;
             border-radius: 10px;
             margin-bottom: 30px;
         }
-        #footer>div>div:nth-child(2){
+
+        #footer>div>div:nth-child(2) {
             margin-top: 1%;
-            height:230px;
-            width:100%;
-            border-top:1px solid grey;
+            height: 230px;
+            width: 100%;
+            border-top: 1px solid grey;
         }
-        #footer>div>div:nth-child(2)>h3{
-            color:rgb(175, 171, 171);
+
+        #footer>div>div:nth-child(2)>h3 {
+            color: rgb(175, 171, 171);
             margin-top: 3%;
         }
-        #footer>div>div:nth-child(2)>div{
-            width:100%;
-            height:80%;
+
+        #footer>div>div:nth-child(2)>div {
+            width: 100%;
+            height: 80%;
             /* border:1px solid red; */
-            color:white;
+            color: white;
             display: flex;
         }
-        #footer>div>div:nth-child(2)>div>div{
-            width:25%;
-            height:100%;
+
+        #footer>div>div:nth-child(2)>div>div {
+            width: 25%;
+            height: 100%;
             /* border:1px solid red; */
-            color:white;
+            color: white;
         }
-        #footer>div>div:nth-child(2)>div>div>p{
+
+        #footer>div>div:nth-child(2)>div>div>p {
             font-size: 20px;
             margin-top: 6%;
 
         }
-        #restaurants{
-            width:90%;
+
+        #restaurants {
+            width: 90%;
             /* border:1px solid red; */
             display: flex;
             justify-content: space-between;
@@ -378,169 +430,115 @@
             margin-bottom: 40px;
             margin: auto;
         }
-        #singlerest{
-            width:23%;
-            height:300px;
+
+        #singlerest {
+            width: 23%;
+            height: 300px;
             text-align: center;
         }
-        #singlerest>img{
-            width:100%;
-            height:80%;
+
+        #singlerest>img {
+            width: 100%;
+            height: 80%;
         }
-        /* media query at 1000px */
-        @media screen and (max-width:1000px){
-            #navbar>div:nth-child(1)>div{
-                width:100%;
+
+        @media screen and (max-width:1000px) {
+            #navbar>div:nth-child(1)>div {
+                width: 100%;
             }
-            #navbar>div:nth-child(2)>div{
-                width:100%;
+
+            #navbar>div:nth-child(2)>div {
+                width: 100%;
             }
-            #navbar>div:nth-child(2)>div>div>p{
+
+            #navbar>div:nth-child(2)>div>div>p {
                 font-size: 16px;
             }
-            #body1{
-                height:900px;
+
+            #body1 {
+                height: 900px;
             }
-            #body1>div{
+
+            #body1>div {
                 /* margin-top: -10px; */
                 flex-wrap: wrap;
-                height:400px;
-                height:95%;
-               
+                height: 400px;
+                height: 95%;
+
                 /* height:900px; */
             }
-            #body1>div>div{
-                width:48%;
-                height:400px;
+
+            #body1>div>div {
+                width: 48%;
+                height: 400px;
                 margin-bottom: 20px;
             }
-            #navbar2>div{
-                width:98%;
+
+            #navbar2>div {
+                width: 98%;
             }
-           
-            #navbar2>div>div:nth-child(2)>div>p{
+
+            #navbar2>div>div:nth-child(2)>div>p {
                 font-size: 17px;
             }
-            #body2{
-                width:95%;
+
+            #body2 {
+                width: 95%;
             }
-            #body2>div>div:nth-child(3)>div>button{
-                width:15%;
-                height:80%;
+
+            #body2>div>div:nth-child(3)>div>button {
+                width: 15%;
+                height: 80%;
                 font-size: 10px;
-               
+
             }
-            #body2>div>div:nth-child(3)>p{
+
+            #body2>div>div:nth-child(3)>p {
                 font-size: 10px;
             }
-            #body2>div>div:nth-child(3){
+
+            #body2>div>div:nth-child(3) {
                 /* border:2px solid red; */
                 align-items: end;
             }
         }
 
-        /* media query at 700px */
-        @media screen and (max-width:700px){
-            #navbar>div:nth-child(2){
-                display: none;
-            }
-            #navbar{
-                display: flex;
-                justify-content: center;
-            }
-            #navbar>div:nth-child(1){
-                width:80%;
-            }
-
-            #body1{
-                height:900px;
-            }
-            #body1>div{
-                width:95%
-               
-                /* height:900px; */
-            }
-            #body1>div>div{
-                width:48%;
-                margin-bottom: 20px;
-            }
-            #navbar2>div{
-                flex-direction: column;
-            }
-            #navbar2>div>div:nth-child(1){
-                height:100%;
-                width:100%;
-                border-bottom: 1px solid grey;
-                /* padding:10px; */
-            }
-            #navbar2>div>div:nth-child(1)>h1{
-                /* margin-top:-10px; */
-                margin-bottom: 5px;
-            }
-            #navbar2>div>div:nth-child(2){
-                height:100%;
-                width:100%;
-                margin-top: 1%;
-            }
-            #navbar2>div>div:nth-child(2)>div>p{
-                font-size: 18px;
-        }
-        #body2{
-            width:95%;
-        }
-        #body2>div{
-            width:45%;
-        }
-        #body2>div>div:nth-child(3)>div>button{
-                width:20%;
-                height:100%;
-                font-size: 13px;
-               
-            }
-            #body2>div>div:nth-child(3)>p{
-                font-size: 25px;
-            }
-            #body2>div>div:nth-child(3){
-                /* border:2px solid red; */
-                align-items: center;
-            }
-             #footer{
-                height:800px;
-            }
-            #footer>div{
-                width:100%;
-                margin-top: 30px;
-                /* border:3px solid gold; */
-            }
-            #footer>div>div:nth-child(1){
-                height:250px;
-            }
-            #footer>div>div:nth-child(1)>div:nth-child(4)>img{
-                width:100%;
-            }
-        }
-
-        
+        /
     </style>
 </head>
+
 <body>
     <div id="screen">
         <div id="navbar">
             <div>
                 <div>
                     <div>
-                        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png"/>
+                        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" />
                     </div>
-                    <div><p><span><u>Vashi</u></span> Navi Mumbai, Maharashtra, India<i class="fa-solid fa-angle-down"></i></p></div>
+                    <div>
+                        <p><span><u>Vashi</u></span> Navi Mumbai, Maharashtra, India<i
+                                class="fa-solid fa-angle-down"></i></p>
+                    </div>
                 </div>
             </div>
             <div>
                 <div>
-                    <div><p><span><i class="fa-solid fa-magnifying-glass"></i></span> Search</p></div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>Offers<sup style="color:#fc8625">New</sup></p></div>
-                    <div><p><span><i class="fa-solid fa-hand-holding-hand"></i></i></span>Help</p></div>
-                    <div style="display: flex;"><span><i class="fa-solid fa-user-plus"></i></span><p id="switch">Sign In</p></div>
-                    <div><p><span><i class="fa-solid fa-cart-shopping"></i></span>Cart</p></div>
+                    <div>
+                        <p><span><i class="fa-solid fa-magnifying-glass"></i></span> Search</p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-certificate"></i></span>Offers<sup
+                                style="color:#fc8625">New</sup></p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-handshake-angle"></i></span>Help</p>
+                    </div>
+                    <div style="display: flex;"><i class="fa-solid fa-user-plus"></i></span>
+                        <p id="switch">Sign In</p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-cart-shopping"></i></span>Cart</p>
+                    </div>
                     <div id="logout"></div>
                 </div>
             </div>
@@ -548,538 +546,1025 @@
         <div id="body1">
             <div>
                 <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep"/>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep" />
                 </div>
                 <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym"/>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" />
                 </div>
                 <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/zpkkdkmvlj5cuvqbc50t"/>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/zpkkdkmvlj5cuvqbc50t" />
                 </div>
                 <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3"/>
+                    <img
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3" />
                 </div>
             </div>
         </div>
         <div id="navbar2">
             <div>
-                <div><h1>728 restaurants</h1></div>
                 <div>
-                    <div><p>Relevance</p></div>
-                    <div><p>Delivery Time</p></div>
-                    <div><p>Rating</p></div>
-                    <div><p>Cost: Low To High</p></div>
-                    <div><p>Cost: High To LOw</p></div>
-                    <div><p>Filters</p></div>
+                    <h1>728 restaurants</h1>
+                </div>
+                <div>
+                    <div>
+                        <p>Relevance</p>
+                    </div>
+                    <div>
+                        <p>Delivery Time</p>
+                    </div>
+                    <div>
+                        <p>Rating</p>
+                    </div>
+                    <div>
+                        <p>Cost: Low To High</p>
+                    </div>
+                    <div>
+                        <p>Cost: High To LOw</p>
+                    </div>
+                    <div>
+                        <p>Filters</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="restaurants"> </div>
-        <div id="body2">
-            <div>
-              <div>
-                <div>
-                    <div>
-                        <div>PROMOTED</div>
+        <div class="restaurant-list">
+            <div class="place">
+                <a href="/SinglePro.html" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="Waffl'd" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rodvzvtensfyfkmvdzuv" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Navaratna Veg Restaurant</div>
+                                <div class="food-items"
+                                    title="Indian, Chinese, South Indian, Snacks, North Indian, Ice Cream">
+                                    Indian, Chinese, South Indian, Snacks, North Indian, Ice Cream
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span>
+                                <span class="offer-text">30% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/plgs0tyizbcb2z7vrgqk"/>
-                </div>
-                <div>
-                    <h3>Dabba Garam (Homely Meals)</h3>
-                    <p>Home Food</p>
-                </div>
-                <div>
-                   <div>
-                    <button><i class="fa-solid fa-star"></i>4.4</button>
-                    <p>.</p>
-                    <p>21 MINS</p>
-                    <p>.</p>
-                    <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                   </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-              </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                </a>
             </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7bb739d7f6ae8b4ce8ed590765dffd2f"/>
-                </div>
-                <div>
-                    <h3>McDonald's</h3>
-                    <p>Burgers, Beverages, Cafe, Deserts</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/oxbkv7rduqga3ljc5txa"/>
-                </div>
-                <div>
-                    <h3>Bhagat Tarachand</h3>
-                    <p>Street Food,North Indian</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tesnldaw6hkqyep8xj0m"/>
-                </div>
-                <div>
-                    <h3>Bhojanam</h3>
-                    <p>Thalis, Desserts,Indian</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jmbtcyk3wqkt9kw9ss5o"/>
-                </div>
-                <div>
-                    <h3>Mansoor Bhai's Lucky</h3>
-                    <p>Biryani,Chinese,North Indian</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/n11sccczmnj74iuvfv1o"/>
-                </div>
-                <div>
-                    <h3>Gupta Sandwiches & Snacks</h3>
-                    <p>Fast Food, Biryani, Snacks</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-              <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/vnhnlefakoveqcx8qiht"/>
-                </div>
-                <div>
-                    <h3>Genuine Beoaster Chicken</h3>
-                    <p>Italian, Pan-Asian, North Indian</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-              </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wz3dfvamdawymtxdspu5"/>
-                </div>
-                <div>
-                    <h3>R Bhagat Tarachand</h3>
-                    <p>North Indian, Chinese, Street Food</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/syguue095n5vlucymgsd"/>
-                </div>
-                <div>
-                    <h3>Oye Kiddan</h3>
-                    <p>Street Food</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div>
-                    <p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p>
-                </div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/f87ny0p8hpeynrv0ycc5"/>
-                </div>
-                <div>
-                    <h3>Meraki</h3>
-                    <p>Chinese</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wnzhrkqvnkiriqajencb"/>
-                </div>
-                <div>
-                    <h3>The Belgian Waffle Co.</h3>
-                    <p>Waffle, Desserts, Ice Cream</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rhrfqof37abefgfbb8kj"/>
-                </div>
-                <div>
-                    <h3>Hotel Punjab Palace</h3>
-                    <p>North Indian</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb"/>
+            <div class="place">
+                <!-- <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link"> -->
+                <div class="list-item">
+                    <div class="item-content">
+                        <div class="top-img">
+                            <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/0263012fbef8e22ba563fa2a25271f28" />
+                        </div>
+
+                        <div class="place-name-div">
+                            <div class="name">Annapurna poli bhaji Kendra</div>
+                            <div class="food-items" title="Maharashtrian, Indian">
+                                Maharashtrian, Indian
+                            </div>
+                        </div>
+                        <div class="info-div">
+                            <div class="rating">
+                                <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                            </div>
+                            <div>•</div>
+                            <div>14 MINS</div>
+                            <div>•</div>
+                            <div class="price">₹300 FOR TWO</div>
+                        </div>
+                        <div class="offer-div">
+                            <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                class="offer-text">20% off | Use WELCOME50</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>KFC</h3>
-                        <p>Burgers, Biryani, American</p>
+                    <div class="quick-view">
+                        <span role="button" aria-label="Open" class="view-btn">Quick View</span>
                     </div>
-                    <div>
-                        <div>
-                            <button><i class="fa-solid fa-star"></i>4.4</button>
-                            <p>.</p>
-                            <p>21 MINS</p>
-                            <p>.</p>
-                            <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                           </div>
-                    </div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
                 </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                <!-- </a> -->
             </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rodvzvtensfyfkmvdzuv"/>
+            <div class="place">
+                <a href="/SingleResrta.html" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/n11sccczmnj74iuvfv1o" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Gupta Sandwiches & Snacks</div>
+                                <div class="food-items" title="Fast Food, Biryani, Snacks, Beverages">
+                                    Fast Food, Biryani, Snacks, Beverages
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹400 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">40% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Navaratna Veg Restaurant</h3>
-                        <p>Indian,Chinese,South Indian</p>
-                    </div>
-                    <div>
-                        <div>
-                            <button><i class="fa-solid fa-star"></i>4.4</button>
-                            <p>.</p>
-                            <p>21 MINS</p>
-                            <p>.</p>
-                            <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                           </div>
-                    </div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-                </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                </a>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ujdn6n65xpldnedg7lzp"/>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/e902c6a9f81d35d2a347f2e6666a6462" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Starbucks Coffee</div>
+                                <div class="food-items" title="Beverages, Cafe, Snacks, Desserts, Bakery, Ice Cream">
+                                    Beverages, Cafe, Snacks, Desserts, Bakery, Ice Cream
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>34 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹150 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Sanjay Lunch Home</h3>
-                        <p>North Indian, Chinese</p>
-                    </div>
-                    <div>
-                        <div>
-                            <button><i class="fa-solid fa-star"></i>4.4</button>
-                            <p>.</p>
-                            <p>21 MINS</p>
-                            <p>.</p>
-                            <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                           </div>
-                    </div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-                </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                </a>
             </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rou1szkzwerakoykk66q"/>
-                </div>
-                <div>
-                    <h3>Theobroma</h3>
-                    <p>Backery,Desserts</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bxhzhxyx3en2y5t1tgof" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <!-- <div class="status-title">Promoted</div> -->
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Blisss</div>
+                                <div class="food-items" title="Desserts, Fast Food, Bakery">
+                                    Desserts, Fast Food, Bakery
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>22 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹350 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">20% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rgck2xvldw4mriw2djyt"/>
-                </div>
-                <div>
-                    <h3>Nothing But Chicken</h3>
-                    <p>Salads, Fast Food</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/b0bbc5f23c299674b6e665e8901489c4" />
+                            </div>
+
+                            <div class="place-name-div">
+                                <div class="name">Gupta Snacks Corner</div>
+                                <div class="food-items" title="Fast Food, Snacks, Pizzas, Beverages">
+                                    Fast Food, Snacks, Pizzas, Beverages
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>40 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹300 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">30% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/m3an43cte2csfsjwuk9a"/>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wizuscbf69y9hhovvy6t" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <!-- <div class="status-title">Promoted</div> -->
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">A Bhagat Tarachand (Sanpada)</div>
+                                <div class="food-items"
+                                    title="North Indian, South Indian, Chinese, Beverages, Snacks, Punjabi">
+                                    North Indian, South Indian, Chinese, Beverages, Snacks, Punjabi
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>16 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹400 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">20% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Tibb's Frankie</h3>
-                        <p>Chinese, Biryani, South Indian</p>
-                    </div>
-                    <div>
-                        <div>
-                            <button><i class="fa-solid fa-star"></i>4.4</button>
-                            <p>.</p>
-                            <p>21 MINS</p>
-                            <p>.</p>
-                            <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                           </div>
-                    </div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-                </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                </a>
             </div>
-            <div>
-               <div>
-                <div>
-                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/82432d7d66dcf2c8065164bd616c59cb"/>
-                </div>
-                <div>
-                    <h3>China Bite</h3>
-                    <p>Chinese</p>
-                </div>
-                <div>
-                    <div>
-                        <button><i class="fa-solid fa-star"></i>4.4</button>
-                        <p>.</p>
-                        <p>21 MINS</p>
-                        <p>.</p>
-                        <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                       </div>
-                </div>
-                <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-               </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="Waffl'd" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ij1bpqqorgfiia4ty7gh" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <!-- <div class="status-title">Promoted</div> -->
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Waffl'd</div>
+                                <div class="food-items"
+                                    title="Bakery, Desserts, Beverages, Combo, European, Ice Cream, Juices, Waffle, Sweets">
+                                    Bakery, Desserts, Beverages, Combo, European, Ice
+                                    Cream, Juices, Waffle, Sweets
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>3.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/5c63d2b772133774707ee3841b5ec3f0"/>
+
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/34709a0517b99f64b292172f6852d32d" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Brij Albela</div>
+                                <div class="food-items" title="Sweets, Snacks">
+                                    Sweets, Snacks
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Chaatwich</h3>
-                        <p>Healthy Food, Beverages,Desserts,Chaat</p>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/91822597693acbea726a2a768c30408e" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Oye Kiddan</div>
+                                <div class="food-items" title="North Indian">
+                                    North Indian
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div>
-                        <div>
-                            <button><i class="fa-solid fa-star"></i>4.4</button>
-                            <p>.</p>
-                            <p>21 MINS</p>
-                            <p>.</p>
-                            <p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>150 FOR TWO</p>
-                           </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/71b308b769ecb013fe5a9b3ac3434836" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Zor'S</div>
+                                <div class="food-items" title="South Indian">
+                                    South Indian
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
                     </div>
-                    <div><p><span><i class="fa-solid fa-certificate"></i></span>30% off | Use TRYNEW</p></div>
-                </div>
-                <div class="none">
-                    <p>QUICK VIEW</p>
-                </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cpdentnlmnxsskptpsk7" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Sweet Bengal</div>
+                                <div class="food-items" title="Sweets, Indian, Snacks, Desserts">
+                                    Sweets, Indian, Snacks, Desserts
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/7bb739d7f6ae8b4ce8ed590765dffd2f" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">McDonald's</div>
+                                <div class="food-items" title="Burgers, Beverages, Cafe, Desserts">
+                                    Burgers, Beverages, Cafe, Desserts
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tx7exhbtrag0z3dkkea6" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Gokool Veg Restaurant</div>
+                                <div class="food-items" title="Indian, Chinese, South Indian">
+                                    Indian, Chinese, South Indian
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/am5uzj3ewpz1micqyirx" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Chetak Sweet Point Vashi</div>
+                                <div class="food-items" title="Sweets, Snacks">
+                                    Sweets, Snacks
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rgck2xvldw4mriw2djyt" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Nothing But Chicken</div>
+                                <div class="food-items" title="Salads, Fast Food">
+                                    Salads, Fast Food
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/992f217c2f122c0d8fc385855ca30722" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Big Bowl (Big Bowl Company)</div>
+                                <div class="food-items" title="North Indian, Chinese, Tibetan, Desserts">
+                                    North Indian, Chinese, Tibetan, Desserts
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/5c63d2b772133774707ee3841b5ec3f0" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Chaatwich</div>
+                                <div class="food-items"
+                                    title="Healthy Food, Beverages, Desserts, Chaat, Combo, Ice Cream, Indian, Jain, Maharashtrian, Pizzas, Snacks, Street Food">
+                                    Healthy Food, Beverages, Desserts, Chaat, Combo, Ice Cream, Indian, Jain,
+                                    Maharashtrian, Pizzas, Snacks, Street Food
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/s2hluo8nlvigctnz7lcy" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Quality Francos</div>
+                                <div class="food-items" title="Fast Food, Snacks">
+                                    Fast Food, Snacks
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="place">
+                <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                    <div class="list-item">
+                        <div class="item-content">
+                            <div class="top-img">
+                                <img class="_2tuBw _12_oN" alt="" width="254" height="160"
+                                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ifkcqxqxyt6eqpifpehy" />
+                            </div>
+                            <div class="status" style="
+              background: rgb(58, 60, 65);
+              color: rgb(255, 255, 255);
+              border-color: rgb(30, 32, 35) transparent;
+            ">
+                                <div class="status-title">Promoted</div>
+                            </div>
+                            <div class="place-name-div">
+                                <div class="name">Vishwa Jyot</div>
+                                <div class="food-items" title="South Indian">
+                                    South Indian
+
+                                </div>
+                            </div>
+                            <div class="info-div">
+                                <div class="rating" style="background-color: #48c479">
+                                    <span class="icon-star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
+                                </div>
+                                <div>•</div>
+                                <div>44 MINS</div>
+                                <div>•</div>
+                                <div class="price">₹200 FOR TWO</div>
+                            </div>
+                            <div class="offer-div">
+                                <span class="icon-offer-filled"><i class="fa-solid fa-tags"></i></span><span
+                                    class="offer-text">50% off | Use WELCOME50</span>
+                            </div>
+                        </div>
+                        <div class="quick-view">
+                            <span role="button" aria-label="Open" class="view-btn">Quick View</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-       
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="points">
+                    COMPANY
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">About us</a></li>
+                        <li class="footer-li"><a href="#">Team</a></li>
+                        <li class="footer-li"><a href="#">Careers</a></li>
+                        <li class="footer-li"><a href="#">Swiggy Blog</a></li>
+                        <li class="footer-li"><a href="#">Bug Bounty</a></li>
+                        <li class="footer-li"><a href="#">Swiggy Super</a></li>
+                        <li class="footer-li"><a href="#">Swiggy Corporate</a></li>
+                        <li class="footer-li"><a href="#">Swiggy Instamart</a></li>
+                    </ul>
+                </div>
+                <div class="points">
+                    CONTACT
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Help & Support</a></li>
+                        <li class="footer-li"><a href="#">Partner with us</a></li>
+                        <li class="footer-li"><a href="#">Ride with us</a></li>
+                    </ul>
+                </div>
+                <div class="points">
+                    LEGAL
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Terms & Conditions</a></li>
+                        <li class="footer-li"><a href="#">Refund & Cancellation</a></li>
+                        <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-li"><a href="#">Cookie Policy</a></li>
+                        <li class="footer-li"><a href="#">Offer Terms</a></li>
+                        <li class="footer-li"><a href="#">Phishing & Fraud</a></li>
+                    </ul>
+                </div>
+                <div class="points">
+                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                        height="54" />
+                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                        height="54" />
+                </div>
+            </div>
+        </footer>
+        <div class="footer2">
+            <div class="list">
+                <h2 <font style="color: grey;">WE DELIVER TO</font>
+                </h2><br>
+
+                <p>Adilabad</p><br>
+                <p>Adityapur</p><br>
+                <p>Adoni</p><br>
+                <p>Agartala</p><br>
+                <p>Agra</p><br>
+                <p>Ahmedabad</p><br>
+                <p>Ahmednagar</p><br>
+                <p>Aizawl</p><br>
+                <p>Ajmer</p><br>
+                <p>Akola</p><br>
+                <p>Alappuzha</p><br>
+                <p>Aligarh</p><br>
+                <p>Alipurduar</p>
+
+            </div>
+            <div class="list">
+                <br>
+                <p>Dehradun</p><br>
+                <p> Dehri</p><br>
+                <p>Delhi</p><br>
+                <p>Deoghar</p><br>
+                <p>Deoria-City</p><br>
+                <p>Dewas</p><br>
+                <p>Dhanbad</p><br>
+                <p>Dhar</p><br>
+                <p>Dharamshala</p><br>
+                <p>Dharapuram</p><br>
+                <p>Dharmapuri</p><br>
+                <p>Dharwad</p><br>
+                <p>Dholpur</p><br>
+                <p>Dhule</p>
+
+
+            </div>
+            <div class="list">
+                <br>
+                <p></p>Khanna</p><br>
+                <p> Kharagpur</p><br>
+                <p>Kishanganj</p><br>
+                <p>Kishangarh</p><br>
+                <p>Kochi</p><br>
+                <p>Kodaikanal</p><br>
+                <p>Kohima</p><br>
+                <p>Kokrajhar</p><br>
+                <p>Kolar</p><br>
+                <p>Kolhapur</p><br>
+                <p>Kolkata</p><br>
+                <p>Kollam</p><br>
+                <p>Koppal</p><br>
+                <p>Korba</p>
+
+            </div>
+            <div class="list">
+                <br>
+                <p></p>Khanna</p><br>
+                <p> Kharagpur</p><br>
+                <p>Kishanganj</p><br>
+                <p>Kishangarh</p><br>
+                <p>Kochi</p><br>
+                <p>Kodaikanal</p><br>
+                <p>Kohima</p><br>
+                <p>Kokrajhar</p><br>
+                <p>Kolar</p><br>
+                <p>Kolhapur</p><br>
+                <p>Kolkata</p><br>
+                <p>Kollam</p><br>
+                <p>Koppal</p><br>
+                <p>Korba</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer3">
+            <div class="last">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza"
+                    alt="">
+            </div>
+            <p>© 2023 Swiggy</p>
+            <div class="imgg">
+                <!-- <a class="_1Az3W" href="https://pinterest.com/swiggyindia" rel="nofollow noopener" alt="pintrest"
+                    target="_blank"><img class="" width="24" height="24" alt=""
+                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd"></a> -->
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc"
+                    alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd"
+                    alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh"
+                    alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv"
+                    alt="">
+            </div>
+
+        </div>
     </div>
     <script>
-        window.onload=function(){
+        window.onload = function () {
             var currentUser = JSON.parse(localStorage.getItem("currentUser"))
             // console.log(currentUser,"current user");
             if (!!currentUser) {
@@ -1088,7 +1573,7 @@
                 var divfromHtml = document.getElementById("switch");
                 // console.log(divfromHtml, "divfromhtml");
                 // var h1=document.createElement("h1");
-                
+
                 // divfromHtml.append(h1)
                 var button = '<button onclick="logout()">Logout</button>'
                 var name = `<h1>${currentUser.userName}</h1>`;
@@ -1100,15 +1585,15 @@
             // }
 
 
-            var divrestaurants=document.getElementById("restaurants");
-            var finaldata="";
+            var divrestaurants = document.getElementById("restaurants");
+            var finaldata = "";
 
-            var lsrest=JSON.parse(localStorage.getItem("restaurants"));
-            for(var i=0;i<lsrest.length;i++){
-                finaldata+=`<div id="singlerest"><img src=${lsrest[i].url} /><h1>${lsrest[i].name}</h1><p>${lsrest[i].price}</p></div>`;
+            var lsrest = JSON.parse(localStorage.getItem("restaurants"));
+            for (var i = 0; i < lsrest.length; i++) {
+                finaldata += `<div id="singlerest"><img src=${lsrest[i].url} /><h1>${lsrest[i].name}</h1><p>${lsrest[i].price}</p></div>`;
             }
-            console.log(finaldata,"finaldata here");
-            divrestaurants.innerHTML=finaldata;
+            console.log(finaldata, "finaldata here");
+            divrestaurants.innerHTML = finaldata;
         }
         function logout() {
             alert("Logout successful.")
@@ -1117,4 +1602,5 @@
         }
     </script>
 </body>
+
 </html>

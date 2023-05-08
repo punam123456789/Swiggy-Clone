@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
+    <title>swiggy-order</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #screen{
+            width:100%;
+            /* height:1200px; */
+            /* border:1px solid red; */
+            display: flex;
+            flex-direction: column;
+        }
+         #navbar{
+            height:100px;
+            width:100%;
+            /* border:1px solid green; */
+            display: flex;
+            position: fixed;
+            top:0;
+            margin-bottom: 10%;
+            background-color: white;
+            box-shadow: 10px 10px 10px rgb(243, 240, 240);
+        }
+        #navbar>div{
+            width:50%;
+            /* border-bottom:1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+        #navbar>div:nth-child(1)>div{
+            width:60%;
+            /* border:1px solid red; */
+            display: flex;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(1){
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(1)>img{
+            height:100%;
+            width:90%;
+        }
+        #navbar>div:nth-child(1)>div{
+            display: flex;
+            align-items: center;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2){
+            height:30px;
+            /* border-bottom:1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p{
+            font-size: 17px;
+            color:rgb(138, 136, 136);
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span{
+            color:black;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>span:hover{
+            cursor: pointer;
+            color:#fc8625;
+        }
+        #navbar>div:nth-child(1)>div>div:nth-child(2)>p>i{
+            color:#fc8625;
+            margin-left: 5px;
+        }
+        #navbar>div:nth-child(2){
+            display: flex;
+            justify-content: left;
+            /* border: 1px solid red; */
+            align-items: center;
+        }
+        #navbar>div:nth-child(2)>div{
+            width:90%;
+            height:35%;
+            display: flex;
+            justify-content: left;
+            /* border: 1px solid gold; */
+        }
+        #navbar>div:nth-child(2)>div>div{
+            width:20%;
+            flex-wrap: wrap;
+        }
+        #navbar>div:nth-child(2)>div>div>p{
+            font-size: 20px;
+            color:rgb(73, 72, 72);
+            /* border:1px solid pink; */
+        }
+        #navbar>div:nth-child(2)>div>div>p:hover{
+            color:#fc8625;
+        }
+        #navbar>div:nth-child(2)>div>div>p>span>i{
+            margin-right: 8px;
+        }
+        #body{
+            width:50%;
+            margin: auto;
+            /* border:1px solid red; */
+            margin-top: 110px;
+            /* height:1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; */
+        }
+        #body1{
+            height:70px;
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border:1px solid green; */
+        }
+        /* #body1>div:nth-child(1){
+            border:1px solid red;
+        } */
+        #body1>div:nth-child(1)>p{
+            color:rgb(168, 165, 165);
+            font-size: 14px;
+        }
+        #body1>div:nth-child(2){
+            /* border:1px solid red; */
+            width:5%;
+        }
+        #body1>div:nth-child(2)>i{
+            font-size: 20px;
+        }
+        #body2{
+            height:140px;
+            width:95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            border-bottom:1px dashed grey;
+            margin: auto;
+        }
+        #body2>div:nth-child(1){
+            height:90%;
+            /* border:1px solid red; */
+        }
+        #body2>div:nth-child(1)>h1{
+            font-size: 22px;
+            margin-bottom: 3%;
+            margin-top: 2%;
+        }
+        #body2>div:nth-child(1)>p:nth-child(2){
+            font-size: 18px;
+            color:rgb(168, 165, 165);
+        }
+        #body2>div:nth-child(1)>p:nth-child(3){
+            font-size: 18px;
+            margin-bottom: 7%;
+            color:rgb(168, 165, 165);
+        }
+        #body2>div:nth-child(1)>p:nth-child(3)>span>i{
+            color:orange;
+        }
+        #body2>div:nth-child(1)>p:nth-child(4){
+            font-size: 18px;
+            color:rgb(168, 165, 165);
+        }
+        #body2>div:nth-child(1)>p:nth-child(4)>span>i{
+            color:grey;
+        }
+        #body2>div:nth-child(2){
+            height:80px;
+            width:12%;
+            border:1px solid rgb(168, 165, 165);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2%;
+            border-radius: 5px;
+
+        }
+        #body2>div:nth-child(2)>div{
+            height:80%;
+            width: 80%;
+            /* border:1px solid red; */
+            
+        }
+        #body2>div:nth-child(2)>div>div:nth-child(1){
+            text-align: center;
+            color:green;
+            height:40%;
+            border-bottom: 1px solid rgb(168, 165, 165);
+        }
+        #body2>div:nth-child(2)>div>div:nth-child(2){
+            height:60%;
+            margin-top: 5%;
+        }
+        #body2>div:nth-child(2)>div>div:nth-child(1)>p{
+            margin-top: 10%;
+        }
+        #body2>div:nth-child(2)>div>div:nth-child(2)>p{
+            font-size: 15px;
+        }
+        #body3{
+            width:95%;
+            /* height:400px; */
+            margin: auto;
+            /* border:1px solid blue; */
+        }
+        #body3>div:nth-child(1){
+            height:60px;
+            /* border:1px solid gold; */
+            display: flex;
+            align-items: center;
+        }
+        #body3>div:nth-child(1)>div{
+            width:200px;
+            /* border:1px solid red; */
+            height:50%;
+        }
+        #body3>div:nth-child(1)>div>p{
+            font-size: 19px;
+            font-weight: bold;
+            /* letter-spacing: 1px; */
+        }
+        #body3>div:nth-child(1)>div>p>span>i{
+            margin-right: 10px;
+        }
+        #body3>div:nth-child(2){
+            height:100px;
+            width:100%;
+            margin: auto;
+            /* border:1px solid purple; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #body3>div:nth-child(2)>div{
+            /* width:22%; */
+            height:70%;
+            border:1px solid rgb(168, 165, 165);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #body3>div:nth-child(2)>div>p:nth-child(1)>span>i{
+            color:brown;
+        }
+        #body3>div:nth-child(2)>div>p:nth-child(1){
+            color:black;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        #body3>div:nth-child(2)>div>p:nth-child(2){
+            color:rgb(168, 165, 165);
+            font-size: 11px;
+            margin-top: 2%;
+            font-weight: bold;
+        }
+        #body3>div:nth-child(3){
+            height:90px;
+            width:100%;
+            border-bottom:1px solid grey;
+            display: flex;
+            align-items: end;
+        }
+        #body3>div:nth-child(3)>div{
+            height:50px;
+            width:100%;
+            /* border:1px solid red; */
+        }
+        #body3>div:nth-child(3)>div>p{
+            font-size: 20px;
+        }
+        #body3>div:nth-child(4){
+            height:600px;
+            width:100%;
+            border-bottom:1px solid grey;
+            display: flex;
+            align-items: end;
+            flex-direction: column;
+            justify-content: top;
+        }
+         #body3>div:nth-child(4)>div:nth-child(1){
+            height:80px;
+            width:100%;
+            /* border:1px solid gold; */
+            display: flex;
+            align-items: center;
+         }
+          #body3>div:nth-child(4)>div:nth-child(1)>h1{
+            font-size: 25px;
+          }
+         #body3>div:nth-child(4)>div:nth-child(2){
+             height:550px;
+            width:100%;
+            /* border:1px solid gold; */
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 5px solid grey;
+         }
+          #body3>div:nth-child(4)>div:nth-child(2)>div{
+            width:48%;
+            height:90%;
+          }
+           #body3>div:nth-child(4)>div:nth-child(2)>div>img{
+            width:100%;
+            height:100%;
+          }
+           #body4{
+            width:95%;
+            /* height:400px; */
+            margin: auto;
+            /* border:1px solid blue; */
+            border-bottom: 5px solid grey;
+        }
+        #body4>h2{
+            height:70px;
+            width:100%;
+            /* border:5px solid rgb(66, 63, 63); */
+            display: flex;
+            align-items: center;
+        }
+        #body4>div{
+            height:150px;
+            width:100%;
+            /* border:1px solid gold; */
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid grey;
+            padding-top: 1%;
+        }
+        #body4>div>div:nth-child(1){
+            width:50%;
+            /* border:1px solid red; */
+            height:70%;
+            padding: 5px;
+        }
+        #body4>div>div>div:nth-child(1){
+            display: flex;
+              /* color:green; */
+        }
+         #body4>div>div>div:nth-child(1)>i{
+            color: green;
+         }
+          #body4>div>div>div:nth-child(1)>p{
+            color: rgb(230, 96, 19);
+         }
+
+        
+        #body4>div>div:nth-child(1)>div>p:nth-child(1){
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        #body4>div>div:nth-child(1)>div>p:nth-child(2){
+            /* font-weight: bold; */
+            margin-bottom: 5px;
+        }
+        #body4>div>div:nth-child(1)>div>p:nth-child(3){
+            /* font-weight: bold; */
+            margin-bottom: 5px;
+            color:rgb(80, 79, 79);
+        }
+        #body4>div>div:nth-child(2){
+            width:20%;
+            /* border:1px solid red; */
+            height:70%;
+        }
+        #body4>div>div:nth-child(2)>img{
+            height:100%;
+            width:100%;
+            border-radius: 10px;
+        }
+        #body4>div>div:nth-child(2)>div>button{
+            height:40px;
+            width:100px;
+            /* position: absolute; */
+            margin-top:-30px;
+            margin-left: 20px;
+            background-color: white;
+            color: green;
+            font-weight: bold;
+            font-size: 15px;
+            border:1px solid grey;
+            box-shadow: 1px 3px 10px rgb(171, 170, 170);
+            border-radius: 10px;
+        }
+        #body5{
+            width:95%;
+            /* height:400px; */
+            margin: auto;
+            /* border:1px solid blue; */
+            border-bottom: 5px solid grey;
+            border-bottom: 5px solid grey;
+        }
+        #body5>h2{
+            height:40px;
+            width:100%;
+            /* border:1px solid red; */
+            margin-top: 2%;
+        }
+        #body5>div{
+            height:60px;
+            width:100%;
+            /* border:1px solid green; */
+            border-bottom: 1px solid grey;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        #body5>div>p{
+            font-size: 18px;
+        }
+        #fixedmennu{
+            height:40px;
+            width:160px;
+            margin: auto;
+            position: fixed;
+            top:740px;
+            left:45%;
+            /* border:1px solid red; */
+
+        }
+        #fixedmennu>button{
+            height:100%;
+            width:100%;
+            font-size:16px;
+            background-color: #5d8ed5;
+            color:white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 2px 2px 1px rgb(172, 170, 170);
+        }
+        #fixedmennu>button>span>i{
+            margin-right: 5px;
+        }
+       
+       
+        
+       
+
+
+        #footer{
+            height:750px;
+            width:100%;
+            background-color: black;
+            display: flex;
+            align-items:end;
+            justify-content:center;
+        }
+        #footer>div{
+            width:80%;
+            height:90%;
+            /* border:1px solid gold; */
+        }
+        #footer>div>div:nth-child(1){
+            height:60%;
+            width:100%;
+            /* border-bottom:1px solid grey; */
+            display: flex;
+        }
+        #footer>div>div:nth-child(1)>div{
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+            color:white;
+        }
+        #footer>div>div:nth-child(1)>div>h4{
+            color:rgb(175, 171, 171);
+            font-size: 20px;
+            margin-bottom: 10%;
+        }
+        #footer>div>div:nth-child(1)>div>p{
+            font-size: 20px;
+            margin-top: 6%;
+
+        }
+        #footer>div>div:nth-child(1)>div:nth-child(4)>img{
+            border:2px solid grey;
+            width:70%;
+            height:18%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        #footer>div>div:nth-child(2){
+            margin-top: 1%;
+            height:230px;
+            width:100%;
+            border-top:1px solid grey;
+        }
+        #footer>div>div:nth-child(2)>h3{
+            color:rgb(175, 171, 171);
+            margin-top: 3%;
+        }
+        #footer>div>div:nth-child(2)>div{
+            width:100%;
+            height:80%;
+            /* border:1px solid red; */
+            color:white;
+            display: flex;
+        }
+        #footer>div>div:nth-child(2)>div>div{
+            width:25%;
+            height:100%;
+            /* border:1px solid red; */
+            color:white;
+        }
+        #footer>div>div:nth-child(2)>div>div>p{
+            font-size: 20px;
+            margin-top: 6%;
+
+        }
+
+
+
+
+         /* media query at 1000px */
+        @media screen and (max-width:1000px){
+            #navbar>div:nth-child(1)>div{
+                width:100%;
+            }
+            #navbar>div:nth-child(2)>div{
+                width:100%;
+            }
+            #navbar>div:nth-child(2)>div>div>p{
+                font-size: 16px;
+            }
+            #body{
+                width:80%;
+            }
+            #body2>div:nth-child(2){
+                width:14%;
+            }
+            #body3>div:nth-child(2)>div>p:nth-child(1){
+            font-size: 12px;
+        }
+        #body3>div:nth-child(2)>div>p:nth-child(2){
+            font-size: 11px;
+        }
+        }
+
+          /* media query at 700px */
+        @media screen and (max-width:700px){
+            #navbar>div:nth-child(2){
+                display: none;
+            }
+            #navbar{
+                display: flex;
+                justify-content: center;
+            }
+            #navbar>div:nth-child(1){
+                width:80%;
+            }
+            #body{
+                width:95%;
+            }
+            #body2>div:nth-child(2){
+                width:17%;
+            }
+            #body3>div:nth-child(2){
+                flex-wrap: wrap;
+                /* border:3px solid red; */
+                height:150px;
+            }
+            #body3>div:nth-child(2)>div{
+                width:48%;
+                height:60px;
+            }
+            #body3>div:nth-child(2)>div>p:nth-child(1){
+            font-size: 17px;
+        }
+        #body3>div:nth-child(2)>div>p:nth-child(2){
+            font-size: 15px;
+        }
+        #footer{
+                height:800px;
+            }
+            #footer>div{
+                width:100%;
+                margin-top: 30px;
+                /* border:3px solid gold; */
+            }
+            #footer>div>div:nth-child(1){
+                height:250px;
+            }
+            #footer>div>div:nth-child(1)>div:nth-child(4)>img{
+                width:100%;
+            }
+            #body4>div>div:nth-child(1){
+            height:75%;
+            
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div>
+                <div>
+                    <div>
+                        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png"/>
+                    </div>
+                    <div><p><span><u>Vashi</u></span> Navi Mumbai, Maharashtra, India<i class="fa-solid fa-angle-down"></i></p></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div><p><span><i class="fa-solid fa-magnifying-glass"></i></span> Search</p></div>
+                    <div><p><span><i class="fa-solid fa-certificate"></i></span>Offers<sup style="color:#fc8625">New</sup></p></div>
+                    <div><p><span><i class="fa-solid fa-hand-holding-hand"></i></i></span>Help</p></div>
+                    <div><p><span><i class="fa-solid fa-user-plus"></i></span>Sign In</p></div>
+                    <div><p><span><i class="fa-solid fa-cart-shopping"></i></span>Cart</p></div>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="body1">
+                <div><p>Home / Mumbai / Sanpada / <span style="color:black">Meraki</span></p></div>
+                <div><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+            <div id="body2">
+                <div>
+                    <h1>Gupta Sandwiches & Snacks</h1>
+                    <p>
+                        Fast Food, Biryani</p>
+                    <p>Vashi, 0.4 km <span><i class="fa-solid fa-caret-down"></i></span></p>
+                    <p><span><i class="fa-solid fa-person-biking"></i></span> 0.4 Kms | ₹33 Delivery fee will apply
+                        y</p>
+                </div>
+                <div>
+                    <div>
+                       <div> <p><span><i class="fa-solid fa-star"></i></span> 4.2</p></div>
+                       <div><p>10k+ratings</p></div>
+                    </div>
+                </div>
+            </div>
+            <div id="body3">
+                <div>
+                   <div> <p><span><i class="fa-solid fa-clock"></i></span>27 MINS</p></div>
+                    <div><p><span><i class="fa-solid fa-indian-rupee-sign"></i></span>Rs200 for two</p></div>
+                </div>
+                <div>
+                    <div>
+                        <p><span><i class="fa-solid fa-certificate"></i></span> FLAT Rs125 OFF</p>
+                        <p>USE MATCHDEAL125 | AbOVE Rs249</p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-certificate"></i></span> 60% OFF UPTO Rs120</p>
+                        <p>USE TRYNEW | ABOVE Rs159</p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-certificate"></i></span> FLAT Rs125 OFF</p>
+                        <p>USE FLATDEAL | ABOVE Rs599</p>
+                    </div>
+                    <div>
+                        <p><span><i class="fa-solid fa-certificate"></i></span> FLAT 20% OFF</p>
+                        <p>USE MATCHPARTY | </p>
+                    </div>
+                </div>
+                <div>
+                    
+                    <div style="display: flex;"> <i class="fa-solid fa-seedling"></i><p> Pure Veg</p></div>
+                </div>
+               
+            </div>
+            <div id="body4">
+                <h2>Recommended (26)</h2>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                       
+                        <div style="display: flex;">
+                            <i class="fa-solid fa-circle-stop"></i>
+                            <p>BestSeller</p>
+                        </div>
+                        <div>
+                            <p>Veggie Cheesy Grilled Sandwich</p>
+                            <p>Rs.115</p>
+                            <p>Serves 1 | Veggie, butter, special herbs & spices with lots of cheese stuffed.</p>
+                           </div>
+                    </div>
+                  
+                    <div>
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iobrfrttsyeqwej5pgec"/>
+                        <div><button>ADD</button></div>
+                    </div>
+                </div>
+        
+    </div>
+</body>
+</html>

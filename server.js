@@ -128,7 +128,7 @@ function login(event) {
     }
     if (flag == true) {
         localStorage.setItem("currentUser", JSON.stringify(currentUser))
-        window.location.href='./home.html';
+        window.location.href='./multipleProduct.html';
         alert("login successfull")
     }
     else {

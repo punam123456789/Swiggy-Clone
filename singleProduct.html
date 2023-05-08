@@ -7,16 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Product</title>
     <script>
-        window.onload = function () {
+       window.onload = function () {
+             // alert("working")
+             var currentUser = JSON.parse(localStorage.getItem("currentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                
+                // divfromHtml.append(h1)
+                // var button = '<button onclick="logout()">Logout</button>'
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+
+
             var product = JSON.parse(localStorage.getItem("current-product"));
 
             var divToAppendProduct = document.getElementById("singleProduct");
             var structure = `<div id='singlePro'> <img src='${product.proImage}' /> <br/> <h1>${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
             console.log(structure, "here");
+            
             divToAppendProduct.innerHTML = structure;
         }
         function addCart(product){
-            // alert("Adding to cart")
+            alert("Adding to cart")
             var currentUser=JSON.parse(localStorage.getItem("currentUser"));
             var userData=JSON.parse(localStorage.getItem("Users"));
             var flagforUser=false;
@@ -32,7 +55,7 @@
 
                     }
                     alert("product added to cart")
-                    window.location.href='./Cart.html'
+                    window.location.href='./CartPage.html'
                 }
             }
             localStorage.setItem("Users",JSON.stringify(userData));
