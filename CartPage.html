@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Your cart</h1>
     <div id="products"></div>
     <script>
-        window.onload = function(){
-            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            var userData = JSON.parse(localStorage.getItem("Users"));
+        window.onload = function () {
+            // alert("working")
+
+            var currentUser = JSON.parse(localStorage.getItem("SwiggyCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Punam"
+                // divfromHtml.append(h1)
+
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<div>${currentUser.userName}</div>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+                // logoutDiv.innerHTML = icon
+            }
+            // else {
+            //     alert("current user absent")
+            // }
+
+
+
+
+            var currentUser = JSON.parse(localStorage.getItem("SwiggyCurrentUser"));
+            var userData = JSON.parse(localStorage.getItem("SwiggyUsers"));
             var divToAppendProducts = document.getElementById("products");
             var products;
-            for(var i=0;i<userData.length;i++){
-                if(currentUser.userEmail == userData[i].userEmail){
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.userEmail == userData[i].userEmail) {
                     products = userData[i].cartProducts;
-                    
+
                 }
 
             }
-            console.log(products,"products here")
+            console.log(products, "products here")
             var finalData = ""
-            for(var i=0;i<products.length;i++){
-                finalData +=  `<div><img src='${products[i].proImage}' /> <br/> <h1>${products[i].proName}</h1><br/> <p>${products[i].proPrice}</p></div>`
+            for (var i = 0; i < products.length; i++) {
+                finalData += `<div><img src='${products[i].proImage}' /> <br/> <h1>${products[i].proName}</h1><br/> <p>${products[i].proPrice}</p></div>`
             }
             // console.log(finalData,"finalData");
             divToAppendProducts.innerHTML = finalData;
         }
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("SwiggyCurrentUser")
+            window.location.reload()
+
+
+        }
+
     </script>
-    
+</body>

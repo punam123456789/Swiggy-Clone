@@ -6,10 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Product</title>
+   
+    <style>
+        #singlePro {
+            width: 100%;
+        }
+
+        #singlePro {
+            border: 1px solid black;
+            width: 30%;
+            /* height: 600px; */
+            margin: auto;
+            text-align: center;
+        }
+
+        #singlePro>img {
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="singleProduct"></div>
+
     <script>
-       window.onload = function () {
+        window.onload = function () {
              // alert("working")
-             var currentUser = JSON.parse(localStorage.getItem("currentUser"))
+             var currentUser = JSON.parse(localStorage.getItem("SwiggyCurrentUser"))
             // console.log(currentUser,"current user");
             if (!!currentUser) {
                 // alert(currenUser,"username")
@@ -40,8 +64,8 @@
         }
         function addCart(product){
             alert("Adding to cart")
-            var currentUser=JSON.parse(localStorage.getItem("currentUser"));
-            var userData=JSON.parse(localStorage.getItem("Users"));
+            var currentUser=JSON.parse(localStorage.getItem("SwiggyCurrentUser"));
+            var userData=JSON.parse(localStorage.getItem("SwiggyUsers"));
             var flagforUser=false;
             for(var i=0;i<userData.length;i++){
                 if(currentUser.userEmail===userData[i].userEmail)
@@ -58,32 +82,18 @@
                     window.location.href='./CartPage.html'
                 }
             }
-            localStorage.setItem("Users",JSON.stringify(userData));
+            localStorage.setItem("SwiggyUsers",JSON.stringify(userData));
         }
+
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("SwiggyCurrentUser")
+            window.location.reload()
+
+
+        }
+
     </script>
-    <style>
-        #singleProduct {
-            width: 100%;
-        }
-
-        #singlePro {
-            border: 1px solid black;
-            width: 30%;
-            /* height: 600px; */
-            margin: auto;
-            text-align: center;
-        }
-
-        #singlePro>img {
-            width: 100%;
-            height: 350px;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="singleProduct"></div>
-
 </body>
 
 </html>

@@ -313,6 +313,25 @@
             font-weight: bold;
             /* display: none; */
         }
+        #products {
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #products>div {
+            width: 23%;
+            border: 1px solid rgb(110, 8, 8);
+            text-align: center;
+            font-size: 10px;
+        }
+
+        #products>div>img {
+            width: 100%;
+            height: 200px;
+        }
 
         #footer {
             height: 750px;
@@ -568,30 +587,45 @@
     <script>
         window.onload = function () {
             // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("SwiggyCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
 
-            var divToShowProducts = document.getElementById("products");
-            var finalData = "";
-
-            var productsFromLS = JSON.parse(localStorage.getItem("Products"))
-            for (var i = 0; i < productsFromLS.length; i++) {
-                finalData += `<div onclick='redirect(${JSON.stringify(productsFromLS[i])})' id='singlePro'><img src=${productsFromLS[i].proImage} /><h3>${productsFromLS[i].proName}</h3><p> ${productsFromLS[i].proPrice}</p></div>`;
+                // divfromHtml.append(h1)
+                var button = '<button onclick="logout()">Logout</button>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
             }
+            //  else {
+            //     alert("current user absent")
+            // }
 
-            // console.log(finalData, "finalData here")
-
-            divToShowProducts.innerHTML = finalData;
-
+            var jwellerydiv = document.getElementById("products");
+            var finaldata = "";
+            var jwelleryfromls = JSON.parse(localStorage.getItem("Products"));
+            for (var i = 0; i < jwelleryfromls.length; i++) {
+                finaldata += `<div onclick='redirect(${JSON.stringify(jwelleryfromls[i])})' id="singlepro"><img src=${jwelleryfromls[i].proImage} /> <h1>${jwelleryfromls[i].proName}</h1> <p>${jwelleryfromls[i].proPrice}</p></div>`
+            }
+            console.log(finaldata, "finaldta here");
+            jwellerydiv.innerHTML = finaldata;
         }
-
         function redirect(product) {
             var singleProduct = JSON.stringify(product);
-            // console.log(s, " s here")
-            // alert("Working")
+            // alert("working");
             localStorage.setItem("current-product", singleProduct);
             window.location.href = './singleProduct.html'
         }
-
-
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("SwiggyCurrentUser")
+            window.location.reload()
+        }
     </script>
 </body>
 
